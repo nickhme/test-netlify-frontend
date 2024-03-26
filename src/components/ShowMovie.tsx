@@ -52,7 +52,7 @@ function ShowMovie({ user }: { user: null | IUser }) {
           {...movie}
         />}
       </div>
-      {movie && (user._id === movie.user) && <button onClick={deleteMovie} className="button is-danger">Delete</button>}
+      {movie && (user?._id === movie.user) && <button onClick={deleteMovie} className="button is-danger">Delete</button>}
     </div>
   </section>
 }
