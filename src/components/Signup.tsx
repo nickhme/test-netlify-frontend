@@ -2,6 +2,7 @@ import { SyntheticEvent, useState } from "react"
 import axios from 'axios'
 // ! This will navigate the page when the user successfully signs up
 import { useNavigate } from "react-router-dom"
+import { baseUrl } from "../config"
 
 export default function Signup() {
 
@@ -34,7 +35,7 @@ export default function Signup() {
     // ! Adding a try/catch
     try {
       e.preventDefault()
-      const resp = await axios.post('/api/signup', formData)
+      const resp = await axios.post(`${baseUrl}/signup`, formData)
       console.log(resp.data)
       // ! take them to the login page
       navigate('/login')
